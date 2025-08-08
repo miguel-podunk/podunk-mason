@@ -3,7 +3,7 @@ import 'package:{{projectName.paramCase()}}/modules/{{moduleName.paramCase()}}/d
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part '{{moduleName.paramCase()}}_repository_provider.g.dart';
+part '../../../../{{moduleName.snakeCase()}}/providers/{{moduleName.paramCase()}}_repository_provider.g.dart';
 
 @riverpod
 {{moduleName.pascalCase()}}Repository {{moduleName.paramCase()}}Repository(
