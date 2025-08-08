@@ -41,24 +41,6 @@ Future<void> run(HookContext context) async {
     context.logger.warn('build_runner not available or failed: $e');
   }
 
-  // Apply automatic Dart fixes
-  final fixProgress = context.logger.progress('Applying automatic fixes');
-  try {
-    final fixResult = await Process.run(
-      'dart',
-      ['fix', '--apply'],
-    );
-    if (fixResult.exitCode == 0) {
-      fixProgress.complete('✓ Automatic fixes applied');
-    } else {
-      fixProgress.fail('✗ Automatic fixes failed');
-      context.logger.err('Dart fix error: ${fixResult.stderr}');
-    }
-  } catch (e) {
-    fixProgress.fail('✗ Automatic fixes failed');
-    context.logger.warn('dart fix not available or failed: $e');
-  }
-
   // Display completion message
   context.logger.info('');
   context.logger.info('🎉 Module "$moduleName" generated successfully!');
