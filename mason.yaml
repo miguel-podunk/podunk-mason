@@ -1,0 +1,4 @@
+bricks:
+  podunk_module:
+    url: https://github.com/miguel-podunk/podunk-mason
+    path: bricks/podunk_module

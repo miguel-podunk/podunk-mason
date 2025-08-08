@@ -1,0 +1,13 @@
+name: podunk_module
+description: A simple module brick
+version: 0.1.0+1
+vars:
+  moduleName:
+    type: string
+    description: Module name
+    default: home
+  
+  projectName:
+    type: string
+    description: Name of the project for imports
+    default: none
