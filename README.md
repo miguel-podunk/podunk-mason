@@ -31,7 +31,7 @@ modules/your_module/
 
 ```bash
 # Add this brick from GitHub
-mason add podunk_module --git-url https://github.com/miguel-podunk/mason_bricks --git-path bricks/podunk_module
+mason add podunk_module --git-url https://github.com/miguel-podunk/podunk-mason --git-path bricks/podunk_module
 
 # Generate code
 mason make podunk_module --moduleName user --projectName my_app
@@ -41,13 +41,13 @@ mason make podunk_module --moduleName user --projectName my_app
 
 ```bash
 # Clone this repository
-git clone https://github.com/miguel-podunk/mason_bricks.git
+git clone https://github.com/miguel-podunk/podunk-mason.git
 
 # Navigate to your Flutter project
 cd your_flutter_project
 
 # Add the brick locally
-mason add podunk_module --path path/to/mason_bricks/bricks/podunk_module
+mason add podunk_module --path path/to/podunk-mason/bricks/podunk_module
 
 # Generate code
 mason make podunk_module --moduleName user --projectName my_app
@@ -57,7 +57,7 @@ mason make podunk_module --moduleName user --projectName my_app
 
 ```bash
 # Install globally
-mason add -g podunk_module --git-url https://github.com/miguel-podunk/mason_bricks --git-path bricks/podunk_module
+mason add -g podunk_module --git-url https://github.com/miguel-podunk/podunk-mason --git-path bricks/podunk_module
 
 # Use anywhere
 mason make podunk_module --moduleName user --projectName my_app
