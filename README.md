@@ -22,6 +22,9 @@ modules/your_module/
 - `moduleName`: The name of your module (default: "home")
 - `projectName`: The name of your project for imports (default: "none")
 
+**Post-Generation Hooks:**
+- Runs `build_runner` to generate `.g.dart` files for Riverpod providers
+
 ## Usage
 
 ### Option 1: Install from GitHub (Recommended)
@@ -103,6 +106,46 @@ mason make podunk_module --moduleName user --projectName my_flutter_app
 5. Commit your changes (`git commit -am 'Add new brick'`)
 6. Push to the branch (`git push origin feature/new-brick`)
 7. Create a Pull Request
+
+## Hooks and Automation
+
+This brick includes post-generation hooks that automatically:
+
+1. **Generate Code**: Runs `build_runner` to create `.g.dart` files
+
+### Available Hook Types
+
+Mason supports several hook types:
+
+- `pre_gen`: Run before file generation
+- `post_gen`: Run after file generation (used in this brick)
+
+### Custom Hook Examples
+
+You can add your own hooks to the `brick.yaml`:
+
+```yaml
+hooks:
+  pre_gen:
+    - description: "Installing dependencies"
+      command: "flutter pub get"
+  post_gen:
+    - description: "Running tests"
+      command: "dart test"
+    - description: "Running custom script"
+      command: "sh scripts/setup.sh"
+```
+
+### Hook Variables
+
+Hooks support the same variables as your templates:
+
+```yaml
+hooks:
+  post_gen:
+    - description: "Creating specific folder"
+      command: "mkdir -p lib/modules/{{moduleName.paramCase()}}/models"
+```
 
 ## Update Your Bricks
 
