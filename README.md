@@ -22,8 +22,9 @@ modules/your_module/
 - `moduleName`: The name of your module (default: "home")
 - `projectName`: The name of your project for imports (default: "none")
 
-**Post-Generation Hooks:**
-- Runs `build_runner` to generate `.g.dart` files for Riverpod providers
+**Automated Hooks:**
+- **Pre-generation**: Validates inputs and checks for existing modules
+- **Post-generation**: Formats code, runs build_runner, and applies dart fixes
 
 ## Usage
 

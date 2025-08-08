@@ -1,6 +1,6 @@
 name: podunk_module
 description: A simple module brick
-version: 0.1.0+2
+version: 0.1.0+3
 vars:
   moduleName:
     type: string
@@ -11,8 +11,3 @@ vars:
     type: string
     description: Name of the project for imports
     default: none
-
-hooks:
-  post_gen:
-    - description: "Running build_runner to generate .g.dart files"
-      command: "dart run build_runner build --delete-conflicting-outputs"
